@@ -1,0 +1,43 @@
+//fonts, colors, spacing
+$mint: #b0d8da;
+$orange: #ff914d;
+$purple: #8c52ff;
+$grey: #94a0b6;
+
+// $script:
+// $base-font:
+
+
+.wrapper {
+  width: 75%;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+$bp-xs: 767px;
+$bp-sm: 768px;
+$bp-md: 992px;
+$bp-lg: 1200px;
+
+
+@mixin bp($class) {
+ @if $class == xs {
+   @media (max-width: $bp-xs) { @content; }
+ }
+
+ @else if $class == sm {
+   @media (min-width: $bp-sm) { @content; }
+ }
+
+ @else if $class == md {
+   @media (min-width: $bp-md) { @content; }
+ }
+
+ @else if $class == lg {
+   @media (min-width: $bp-lg) { @content; }
+ }
+
+ @else {
+   @warn "Breakpoint mixin supports: xs, sm, md, lg";
+ }
+}
